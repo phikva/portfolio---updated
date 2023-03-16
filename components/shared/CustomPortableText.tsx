@@ -20,7 +20,7 @@ export function CustomPortableText({
       link: ({ children, value }) => {
         return (
           <a
-            className="transition hover:opacity-50 rounded-full border border-black px-5 py-2"
+            className=" text-xl md:text-link transition hover:opacity-50 rounded-full border border-black px-5 py-2"
             href={value?.href}
             target="_blank"
             rel="noreferrer noopener"

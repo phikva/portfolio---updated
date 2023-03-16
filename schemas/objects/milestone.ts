@@ -40,7 +40,7 @@ export default defineType({
       type: 'duration',
       name: 'duration',
       title: 'Duration',
-      validation: (rule) => rule.required(),
+      validation: false,
     }),
   ],
   preview: {

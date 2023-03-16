@@ -12,11 +12,11 @@ export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
       {timelines?.map((timeline, key) => {
         const { title, milestones } = timeline
         return (
-          <div className="max-w-[80%] md:max-w-[50%]" key={key}>
-            <div className="font-sans text-xl font-bold">{title}</div>
+          <div className="flex flex-col md:grid md:gap-x-5  md:grid-cols-2 xl:grid-cols-3 xl:gap-x-4x " key={key}>
+            <h3 className=" mt-20 md:col-span-2 xl:col-span-3">{title}</h3>
 
             {milestones?.map((experience, index) => (
-              <div key={index}>
+              <div className='pb-6 pt-4 md:pb-20 border-t' key={index}>
                 <TimelineItem
                   milestone={experience}
                   isLast={milestones.length - 1 === index}

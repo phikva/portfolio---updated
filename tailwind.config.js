@@ -12,6 +12,7 @@ module.exports = {
     // Overriding fontFamily to use @next/font loaded families
     colors: {
       'white': '#f3f3f3',
+      'grey': '#262626'
     },
     fontSize: {
       'xl': '1rem',

@@ -18,13 +18,13 @@ export function Header(props: HeaderProps) {
 
       {/* Title */}
       {title &&  (
-        <div className="mb-6 text-4xl md:text-8xl xl:text-15xl">
+        <div className="mb-4 text-4xl md:text-8xl xl:text-15xl">
           <h1 className='text-left font-neueHeavy'>A design and development portfolio</h1>
         </div>
       )}
       {/* Description */}
       {description && (
-        <h2 className="text-left text-link md:text-2xl">
+        <h2 className=" max-w-[1200px] text-left text-link md:text-2xl">
           <CustomPortableText value={description} />
         </h2>
       )}

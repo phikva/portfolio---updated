@@ -48,9 +48,9 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
               })}
             </div>
           )}
-            <div className='p-4 mt-10  md:grid'>
-              <h3 className='pb-4 md:col-start-1'>Education</h3>
-              <div className='md:col-start-2'>
+            <div className='mt-10'>
+              {/* <h3 className='pb-4 md:col-start-1'>Education</h3> */}
+              <div className=''>
               {/* Body */}
          {body && (
               <CustomPortableText

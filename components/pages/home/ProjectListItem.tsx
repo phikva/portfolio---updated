@@ -12,20 +12,23 @@ export function ProjectListItem(props: ProjectProps) {
 
   return (
     <div
-      className={`mb-10 border-t md:mb-20 flex flex-col gap-x-5 transition`}
+      className={`mb-10  border-t md:mb-20 flex flex-col gap-x-5 transition`}
     >
       {/* ${
         odd && 'xl:flex-row-reverse'
       }`} */}
-      <div className="pt-4 flex">
+      <div className="pt-4  flex">
         <TextBox project={project} />
       </div>
-      <div className="pt-4 md:pt-6 w-full xl:w-9/12">
+      
+      <div className="pt-4  md:pt-6 w-full xl:w-5/6">
+      
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
           classesWrapper="relative aspect-[16/9] rounded-md border"
         />
+        
       </div>
       
     </div>
@@ -37,11 +40,11 @@ function TextBox({ project }: { project: ShowcaseProject }) {
     <div className="relative flex w-full flex-col justify-between">
       <div className='flex flex-col md:flex-row justify-between'>
         {/* Title */}
-        <div className="text-link md:text-2xl leading-none">
+        <div className="text-link  md:text-2xl leading-none">
           {project.title}
         </div>
         <div>
-          <div className=' mt-5 text-xl md:text-link md:m-0 hover:underline'>
+          <div className=' mt-4 text-xl md:text-link md:m-0 hover:underline'>
             View project
             </div>
         </div>

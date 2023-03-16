@@ -42,7 +42,7 @@ export function ProjectPage({
 
       <Layout settings={settings} preview={preview}>
         <div>
-          <div className="mb-20 space-y-6">
+          <div className="mb-20 space-y-2 xl:space-y-6">
           <div className="">
           <h1 className='text-left font-neueHeavy text-4xl md:text-8xl xl:text-15xl'> {title}</h1>
         </div>
@@ -52,10 +52,10 @@ export function ProjectPage({
 
             
 
-              <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-y-0 lg:divide-x">
+              <div className="divide-inherit grid grid-cols-1 lg:grid-cols-4 lg:divide-y-0 lg:divide-x">
                 {/* Duration */}
                 {!!(startYear && endYear) && (
-                  <div className="p-3 lg:p-4">
+                  <div className="p-3 lg:p-4 border-t lg:border-t-0">
                     <div className="text-link">Duration</div>
                     <div className=" text-xl">{`${startYear} -  ${endYear}`}</div>
                   </div>
@@ -63,7 +63,7 @@ export function ProjectPage({
 
                 {/* Client */}
                 {client && (
-                  <div className="p-3 lg:p-4">
+                  <div className="p-3 lg:p-4 border-t lg:border-t-0">
                     <div className="text-link">Client</div>
                     <div className="text-xl">{client}</div>
                   </div>
@@ -71,7 +71,7 @@ export function ProjectPage({
 
                 {/* Site */}
                 {site && (
-                  <div className="p-3 lg:p-4">
+                  <div className="p-3 lg:p-4 border-t lg:border-t-0">
                     <div className="text-link">Site</div>
                     {site && (
                       <Link
@@ -86,11 +86,11 @@ export function ProjectPage({
                 )}
 
                 {/* Tags */}
-                <div className="p-3 lg:p-4">
+                <div className="p-3 lg:p-4 border-t lg:border-t-0">
                   <div className="text-link">Tags</div>
                   <div className="text-md flex flex-row flex-wrap md:text-lg">
                     {tags?.map((tag, key) => (
-                      <div key={key} className="mr-1 mt-1 break-words px-5 py-2 rounded-full border ">
+                      <div key={key} className="mr-1 mt-1 break-words px-3 py-1 rounded-full border ">
                         #{tag}
                       </div>
                     ))}
@@ -119,7 +119,7 @@ export function ProjectPage({
             {/* Workaround: scroll to top on route change */}
             <ScrollUp />
           </div>
-          <div className="absolute left-0 w-screen border-t" />
+          <div className="absolute left-0 w-screen" />
         </div>
       </Layout>
     </>

@@ -15,6 +15,9 @@ body {
   font-family: neue-haas-unica, sans-serif; 
 
 }
+body {
+  @apply text-grey;
+}
 
 html {
   -webkit-font-smoothing: antialiased;
@@ -23,7 +26,7 @@ html {
 }
 
 p:not(:last-child) {
-  margin-bottom: 0.875rem;
+  margin-bottom: 2rem;
 }
 
 ol,
@@ -41,11 +44,17 @@ h1{
   letter-spacing: -.015em;
   line-height: 100%;
 }
-h2,h3 {
+h2,h3,h4 {
   letter-spacing: -.015em;
   line-height: 110%;
 }
+h1{
+  @apply text-grey;
+}
 
 h2,h3{
-  @apply mb-4 text-2xl md:text-6xl md:mb-5;
+  @apply text-grey pb-4 text-2xl md:text-5xl xl:text-6xl md:pb-5;
+}
+h4{
+  @apply text-grey pb-4 text-link md:text-2xl md:pb-5;
 }
