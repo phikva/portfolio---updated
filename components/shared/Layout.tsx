@@ -21,7 +21,7 @@ export default function Layout({
   preview,
 }: LayoutProps) {
   return (
-    <div className=" bg-white flex min-h-screen flex-col max-w-[1500px] xl:mx-auto text-black">
+    <div className=" p-2 md:p-4 xl:p-5 bg-white flex min-h-screen flex-col max-w-[2000px] xl:mx-auto text-black">
       {preview && <PreviewBanner />}
       <Navbar menuItems={settings?.menuItems} />
       <div className="mt-10 flex-grow">{children}</div>

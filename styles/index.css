@@ -35,6 +35,17 @@ ol {
   list-style-type: disc;
 }
 
-h3,h4 {
-@apply text-2xl md:text-2xl lg:text-3xl;
+
+
+h1{
+  letter-spacing: -.015em;
+  line-height: 100%;
+}
+h2,h3 {
+  letter-spacing: -.015em;
+  line-height: 110%;
+}
+
+h2,h3{
+  @apply mb-4 text-2xl md:text-6xl md:mb-5;
 }

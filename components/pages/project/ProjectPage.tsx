@@ -43,12 +43,12 @@ export function ProjectPage({
       <Layout settings={settings} preview={preview}>
         <div>
           <div className="mb-20 space-y-6">
-          <div className="px-4 text-5xl md:text-7xl">
-          <h1 className='text-left font-neueHeavy font-bold'> {title}</h1>
+          <div className="">
+          <h1 className='text-left font-neueHeavy text-4xl md:text-8xl xl:text-15xl'> {title}</h1>
         </div>
           
             {/* Header */}
-            <Header   description={overview} />
+            <Header  description={overview} />
 
             
 
@@ -56,27 +56,27 @@ export function ProjectPage({
                 {/* Duration */}
                 {!!(startYear && endYear) && (
                   <div className="p-3 lg:p-4">
-                    <div className="text-xs md:text-sm">Duration</div>
-                    <div className="text-md md:text-lg">{`${startYear} -  ${endYear}`}</div>
+                    <div className="text-link">Duration</div>
+                    <div className=" text-xl">{`${startYear} -  ${endYear}`}</div>
                   </div>
                 )}
 
                 {/* Client */}
                 {client && (
                   <div className="p-3 lg:p-4">
-                    <div className="text-xs md:text-sm">Client</div>
-                    <div className="text-md md:text-lg">{client}</div>
+                    <div className="text-link">Client</div>
+                    <div className="text-xl">{client}</div>
                   </div>
                 )}
 
                 {/* Site */}
                 {site && (
                   <div className="p-3 lg:p-4">
-                    <div className="text-xs md:text-sm">Site</div>
+                    <div className="text-link">Site</div>
                     {site && (
                       <Link
                         target="_blank"
-                        className="text-md break-words md:text-lg"
+                        className="text-xl break-words"
                         href={site}
                       >
                         {site}
@@ -87,10 +87,10 @@ export function ProjectPage({
 
                 {/* Tags */}
                 <div className="p-3 lg:p-4">
-                  <div className="text-xs md:text-sm">Tags</div>
+                  <div className="text-link">Tags</div>
                   <div className="text-md flex flex-row flex-wrap md:text-lg">
                     {tags?.map((tag, key) => (
-                      <div key={key} className="mr-1 break-words ">
+                      <div key={key} className="mr-1 mt-1 break-words px-5 py-2 rounded-full border ">
                         #{tag}
                       </div>
                     ))}
@@ -98,12 +98,12 @@ export function ProjectPage({
                 </div>
               </div>
 
-              <div className=" px-4">
+              <div className="">
               {/* Image  */}
               <ImageBox
                 image={coverImage}
                 alt={`Cover image for ${title}`}
-                classesWrapper="relative aspect-[16/9]"
+                classesWrapper="relative aspect-[16/9] rounded-md border"
               />
                 {/* Description */}
             {description && (

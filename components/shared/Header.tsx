@@ -13,18 +13,18 @@ export function Header(props: HeaderProps) {
   //   return null
   // }
   return (
-    <div className={`${centered ? 'text-center max-w-[1500px] mb-20' : left ? 'text-left' : 'w-5/6 lg:w-3/5'}`}>
+    <div className={`${centered ? 'text-center max-w-[2000px] mb-24' : left ? 'text-left' : 'lg:w-4/6'}`}>
     
 
       {/* Title */}
       {title &&  (
-        <div className="px-4 text-5xl md:text-7xl">
-          <h1 className='text-left font-neueHeavy font-bold'>A portfolio of design and development work by Philip Kvam</h1>
+        <div className="mb-6 text-4xl md:text-8xl xl:text-15xl">
+          <h1 className='text-left font-neueHeavy'>A design and development portfolio</h1>
         </div>
       )}
       {/* Description */}
       {description && (
-        <h2 className="px-4  mt-10  text-xl md:text-2xl text-left">
+        <h2 className="text-left text-link md:text-2xl">
           <CustomPortableText value={description} />
         </h2>
       )}

@@ -32,8 +32,8 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           {showcaseProjects && showcaseProjects.length > 0 && (
             
             <div className="mt-10">
-              <div className='px-4'>
-            <h3 className=''>latest work</h3>
+              <div className=''>
+            <h3 className=''>Latest work</h3>
           </div>
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
@@ -49,7 +49,7 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
             </div>
           )}
             <div className='p-4 mt-10  md:grid'>
-              <h3 className='pb-4 md:col-start-1'>education</h3>
+              <h3 className='pb-4 md:col-start-1'>Education</h3>
               <div className='md:col-start-2'>
               {/* Body */}
          {body && (

@@ -20,7 +20,7 @@ export function CustomPortableText({
       link: ({ children, value }) => {
         return (
           <a
-            className="transition hover:opacity-50 rounded-full border border-black p-2"
+            className="transition hover:opacity-50 rounded-full border border-black px-5 py-2"
             href={value?.href}
             target="_blank"
             rel="noreferrer noopener"
@@ -37,11 +37,11 @@ export function CustomPortableText({
         value: Image & { alt?: string; caption?: string }
       }) => {
         return (
-          <div className="my-6 space-y-2">
+          <div className="my-4 space-y-2">
             <ImageBox
               image={value}
               alt={value.alt}
-              classesWrapper="relative aspect-[16/9]"
+              classesWrapper="relative aspect-[16/9] rounded-md border"
             />
             {value?.caption && (
               <div className="text-sm text-gray-600">
