@@ -43,16 +43,14 @@ export function ProjectPage({
       <Layout settings={settings} preview={preview}>
         <div>
           <div className="mb-20 space-y-6">
+          <div className="px-4 text-5xl md:text-7xl">
+          <h1 className='text-left font-neueHeavy font-bold'> {title}</h1>
+        </div>
+          
             {/* Header */}
-            <Header title={title} description={overview} />
+            <Header   description={overview} />
 
-            <div className="rounded-md border">
-              {/* Image  */}
-              <ImageBox
-                image={coverImage}
-                alt={`Cover image for ${title}`}
-                classesWrapper="relative aspect-[16/9]"
-              />
+            
 
               <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-y-0 lg:divide-x">
                 {/* Duration */}
@@ -99,15 +97,25 @@ export function ProjectPage({
                   </div>
                 </div>
               </div>
-            </div>
 
-            {/* Description */}
+              <div className=" px-4">
+              {/* Image  */}
+              <ImageBox
+                image={coverImage}
+                alt={`Cover image for ${title}`}
+                classesWrapper="relative aspect-[16/9]"
+              />
+                {/* Description */}
             {description && (
               <CustomPortableText
                 paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
                 value={description}
               />
             )}
+            </div>
+
+          
+           
             {/* Workaround: scroll to top on route change */}
             <ScrollUp />
           </div>

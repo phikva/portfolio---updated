@@ -2,27 +2,31 @@ import { CustomPortableText } from 'components/shared/CustomPortableText'
 
 interface HeaderProps {
   centered?: boolean
+  left?: boolean
   description?: any[]
   title?: string
+ 
 }
 export function Header(props: HeaderProps) {
-  const { title, description, centered = false } = props
-  if (!description && !title) {
-    return null
-  }
+  const { title, description,  centered = false, left=false } = props
+  // if (!description && !title !title) {
+  //   return null
+  // }
   return (
-    <div className={`${centered ? 'text-center' : 'w-5/6 lg:w-3/5'}`}>
+    <div className={`${centered ? 'text-center max-w-[1500px] mb-20' : left ? 'text-left' : 'w-5/6 lg:w-3/5'}`}>
+    
+
       {/* Title */}
-      {title && (
-        <div className="text-3xl font-extrabold tracking-tight md:text-5xl">
-          {title}
+      {title &&  (
+        <div className="px-4 text-5xl md:text-7xl">
+          <h1 className='text-left font-neueHeavy font-bold'>A portfolio of design and development work by Philip Kvam</h1>
         </div>
       )}
       {/* Description */}
       {description && (
-        <div className="mt-4 font-serif text-xl text-gray-600 md:text-2xl">
+        <h2 className="px-4  mt-10  text-xl md:text-2xl text-left">
           <CustomPortableText value={description} />
-        </div>
+        </h2>
       )}
     </div>
   )

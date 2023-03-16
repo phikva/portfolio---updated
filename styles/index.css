@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://use.typekit.net/pym3ipg.css");
 
 html,
 body,
@@ -11,6 +12,8 @@ body,
 body {
   -webkit-font-smoothing: antialiased;
   margin: 0;
+  font-family: neue-haas-unica, sans-serif; 
+
 }
 
 html {
@@ -30,4 +33,8 @@ ul {
 
 ol {
   list-style-type: disc;
+}
+
+h3,h4 {
+@apply text-2xl md:text-2xl lg:text-3xl;
 }

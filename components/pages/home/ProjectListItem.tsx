@@ -12,15 +12,16 @@ export function ProjectListItem(props: ProjectProps) {
 
   return (
     <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-t border-b xl:flex-row-reverse'
-      }`}
+      className={` p-4 flex flex-col gap-x-5 transition xl:flex-row`}
     >
+      {/* ${
+        odd && 'xl:flex-row-reverse'
+      }`} */}
       <div className="w-full xl:w-9/12">
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9]"
+          classesWrapper="relative aspect-[16/9] "
         />
       </div>
       <div className="flex xl:w-1/4">
@@ -32,25 +33,25 @@ export function ProjectListItem(props: ProjectProps) {
 
 function TextBox({ project }: { project: ShowcaseProject }) {
   return (
-    <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
-      <div>
+    <div className="relative pt-4 flex w-full flex-col justify-center xl:mt-0">
+      <div className='xl:flex justify-center'>
         {/* Title */}
-        <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
+        <div className="text-xl">
           {project.title}
         </div>
         {/* Overview  */}
-        <div className="font-serif text-gray-500">
+        {/* <div className="font-serif text-gray-500">
           <CustomPortableText value={project.overview} />
-        </div>
+        </div> */}
       </div>
       {/* Tags */}
-      <div className="mt-4 flex flex-row gap-x-2">
+      {/* <div className="mt-4 flex flex-row flex-wrap gap-x-2">
         {project.tags?.map((tag, key) => (
           <div className="text-sm font-medium lowercase md:text-lg" key={key}>
             #{tag}
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
