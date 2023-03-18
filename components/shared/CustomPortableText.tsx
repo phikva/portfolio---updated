@@ -1,8 +1,8 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import ImageBox from 'components/shared/ImageBox'
 import { TimelineSection } from 'components/shared/TimelineSection'
-import { Image, PortableTextBlock } from 'sanity'
-
+import ReactPlayer from 'react-player'
+import { Image, PortableTextBlock} from 'sanity'
 export function CustomPortableText({
   paragraphClasses,
   value,
@@ -51,11 +51,30 @@ export function CustomPortableText({
           </div>
         )
       },
+      video: ({
+        value,
+      }: {
+        value:  & {video?: object, alt?: string; caption?: string }
+      }) => {
+        return (
+          <div className="my-4 space-y-2">
+            <ReactPlayer src={value} />
+
+            {value?.caption && (
+              <div className="text-sm text-gray-600">
+                {value.caption}
+              </div>
+            )}
+          </div>
+        )
+      },
+      
       timeline: ({ value }) => {
         const { items } = value || {}
         return <TimelineSection timelines={items} />
       },
     },
+    
   }
 
   return <PortableText components={components} value={value} />

@@ -57,6 +57,35 @@ export default defineType({
       validation: (rule) => rule.max(155).required(),
     }),
     defineField({
+      name: 'overviewHomePage',
+      description:
+        'Used both for the <meta> description tag for SEO, and project subheader.',
+      title: 'Overview for project list on homepage',
+      type: 'array',
+      of: [
+        // Paragraphs
+        defineArrayMember({
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: 'Italic',
+                value: 'em',
+              },
+              {
+                title: 'Strong',
+                value: 'strong',
+              },
+            ],
+          },
+          styles: [],
+          type: 'block',
+        }),
+      ],
+      validation: (rule) => rule.max(155).required(),
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       description:
@@ -65,8 +94,55 @@ export default defineType({
       options: {
         hotspot: true,
       },
-      validation: (rule) => rule.required(),
+      
     }),
+
+
+  defineField({
+    name: 'backgroundVideo',
+  title: 'Background Video',
+  type: 'document',
+  description: 'copy the url from assets manager',
+
+  fields: [
+    
+    {
+      name: 'url',
+      title: 'Url',
+      type: 'url',
+      description:
+        'Please make sure this is a short loopable video, does not have sound, and is a video file. Please do not use a link from youtube, vemeo, or any other video hosting wesbite link.',
+    },
+    defineField({
+      title: 'Caption',
+      name: 'caption',
+      type: 'string',
+    }),
+    defineField({
+      name: 'alt',
+      type: 'string',
+      title: 'Alt text',
+      description:
+        'Alternative text for screenreaders. Falls back on caption if not set',
+    }),
+  ],
+ 
+    
+  
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'url',
+    },
+    prepare({ title, subtitle }) {
+      return {
+        title,
+        subtitle,
+      };
+    },
+  },
+  }),
+
     defineField({
       name: 'duration',
       title: 'Duration',

@@ -10,6 +10,8 @@ import { pageStructure, singletonPlugin } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+// import {muxInput} from 'sanity-plugin-mux-input'
+import {media} from 'sanity-plugin-media'
 import page from 'schemas/documents/page'
 import project from 'schemas/documents/project'
 import duration from 'schemas/objects/duration'
@@ -49,6 +51,8 @@ export default defineConfig({
     ],
   },
   plugins: [
+    // muxInput({mp4_support: 'standard'}),
+    media(),
     deskTool({
       structure: pageStructure([home, settings]),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane

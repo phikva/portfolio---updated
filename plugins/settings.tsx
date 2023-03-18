@@ -9,6 +9,8 @@ import { type StructureResolver } from 'sanity/desk'
 import { PREVIEWABLE_DOCUMENT_TYPES } from '../sanity.config'
 import { PreviewPane } from './previewPane/PreviewPane'
 
+
+
 export const singletonPlugin = (types: string[]) => {
   return {
     name: 'singletonPlugin',

@@ -28,13 +28,13 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           {/* Header */}
           {title && <Header centered title={title} description={overview} />}
           {/* Showcase projects */}
-          
+          <h3 className=''>Latest work</h3>
           {showcaseProjects && showcaseProjects.length > 0 && (
             
-            <div className="mt-10">
-              <div className=''>
-            <h3 className=''>Latest work</h3>
-          </div>
+            <div className="">
+              {/* <div className=''>
+            
+          </div> */}
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)
                 if (!href) {

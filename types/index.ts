@@ -20,7 +20,9 @@ export interface MilestoneItem {
 export interface ShowcaseProject {
   _type: string
   coverImage?: Image
+  backgroundVideo?: string,
   overview?: PortableTextBlock[]
+  overviewHomePage?: PortableTextBlock[]
   slug?: string
   tags?: string[]
   title?: string
@@ -47,6 +49,7 @@ export interface PagePayload {
 export interface ProjectPayload {
   client?: string
   coverImage?: Image
+  backgroundVideo?: string
   description?: PortableTextBlock[]
   duration?: {
     start?: string

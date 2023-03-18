@@ -38,7 +38,15 @@ ol {
   list-style-type: disc;
 }
 
-
+video {
+  @apply rounded-md border;
+}
+.projectHomeText p {
+  
+  top: 0;
+  /* bottom: 0; */
+  @apply text-link md:absolute;
+}
 
 h1{
   letter-spacing: -.015em;

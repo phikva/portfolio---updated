@@ -7,6 +7,7 @@ import type { ProjectPayload, SettingsPayload } from 'types'
 
 import Layout from '../../shared/Layout'
 import ProjectPageHead from './ProjectPageHead'
+import ReactPlayer from 'react-player'
 
 export interface ProjectPageProps {
   project: ProjectPayload | undefined
@@ -25,6 +26,7 @@ export function ProjectPage({
   const {
     client,
     coverImage,
+    backgroundVideo,
     description,
     duration,
     overview,
@@ -42,7 +44,7 @@ export function ProjectPage({
 
       <Layout settings={settings} preview={preview}>
         <div>
-          <div className="mb-20 space-y-2 xl:space-y-6">
+          <div className="mb-20 space-y-2 xl:space-y-4">
           <div className="">
           <h1 className='text-left font-neueHeavy text-4xl md:text-8xl xl:text-15xl'> {title}</h1>
         </div>
@@ -98,22 +100,34 @@ export function ProjectPage({
                 </div>
               </div>
 
-              <div className="">
-              {/* Image  */}
-              <ImageBox
-                image={coverImage}
-                alt={`Cover image for ${title}`}
-                classesWrapper="relative aspect-[16/9] rounded-md border"
-              />
-                {/* Description */}
-            {description && (
+              <div className="md:grid grid-cols-2 gap-x-4">
+      {project.coverImage && (
+        <ImageBox
+          image={project.coverImage}
+          alt={`Cover image from ${project.title}`}
+          classesWrapper="relative aspect-[16/9] rounded-md border mb-2"
+        />
+      )}
+        {project.backgroundVideo.url && (
+            <ReactPlayer
+            //  style={ {aspectRatio: '16/9', objectFit: 'contain'} }
+             width='100%'
+             height='100%'
+          loop={true}
+          playing={true}
+          url={project.backgroundVideo.url}
+          alt={`Cover video from ${project.title}`}
+          />
+        )}
+      
+      </div>
+   {/* Description */}
+   {description && (
               <CustomPortableText
                 paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
                 value={description}
               />
             )}
-            </div>
-
           
            
             {/* Workaround: scroll to top on route change */}

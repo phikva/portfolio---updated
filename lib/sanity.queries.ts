@@ -8,7 +8,9 @@ export const homePageQuery = groq`
     showcaseProjects[]->{
       _type,
       coverImage,
+      backgroundVideo,
       overview,
+      overviewHomePage,
       "slug": slug.current,
       tags,
       title,
@@ -37,6 +39,7 @@ export const projectBySlugQuery = groq`
     _id,
     client,
     coverImage,
+    backgroundVideo,
     description,
     duration,
     overview,
