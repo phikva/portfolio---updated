@@ -47,8 +47,10 @@ export function ProjectListItem(props: ProjectProps) {
             }}
              width='100%'
              height='100%'
+             volume={null}
           loop={true}
           playing={true}
+          muted={true}
           url={project.backgroundVideo.url}
           alt={`Cover video from ${project.title}`}
           />

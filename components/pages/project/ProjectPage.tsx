@@ -113,8 +113,10 @@ export function ProjectPage({
             //  style={ {aspectRatio: '16/9', objectFit: 'contain'} }
              width='100%'
              height='100%'
+             volume={null}
           loop={true}
           playing={true}
+          muted={true}
           url={project.backgroundVideo.url}
           alt={`Cover video from ${project.title}`}
           />
