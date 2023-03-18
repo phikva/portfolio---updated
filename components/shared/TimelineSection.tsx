@@ -19,10 +19,10 @@ export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
               <h3 className=" mt-20 md:col-span-2 xl:col-span-3">{title}</h3>
   
               
-  
+            
               {milestones?.map((experience, index) => (
                
-                <div className='pb-6 pt-4 md:pb-20 border-t' key={index}>
+                <div className='md:pb-20' key={index}>
                   <TimelineItem
                     milestone={experience}
                     isLast={milestones.length - 1 === index}
@@ -42,7 +42,7 @@ export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
 
             {milestones?.map((experience, index) => (
              
-              <div className='pb-6 pt-4 md:pb-20 border-t' key={index}>
+              <div className='pb-6 pt-4 md:pb-20 ' key={index}>
                 <TimelineItem
                   milestone={experience}
                   isLast={milestones.length - 1 === index}

@@ -49,7 +49,7 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9] rounded-md border"
             />
             {value?.caption && (
-              <div className="text-sm text-gray-600">
+              <div className=" md:text-link text-gray-600">
                 {value.caption}
               </div>
             )}

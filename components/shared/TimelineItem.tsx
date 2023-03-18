@@ -21,7 +21,10 @@ export function TimelineItem({
       
       <div className="">
         {/* Title */}
-        <h4 className="">{title}</h4>
+      {title && (
+        <h4 className="pt-4 border-t">{title}</h4>
+      )}
+        
         {/* Tags */}
         {tags?.map && (
           <div className="text-sm flex flex-wrap pb-4">
@@ -37,7 +40,10 @@ export function TimelineItem({
         )}
 
         {/* Description */}
-        <div className=" text-xl text-grey md:text-link max-w-[600px] pb-4">{description}</div>
+        {description && (
+          <div className=" text-xl text-grey md:text-link max-w-[600px] pb-4">{description}</div>
+        )}
+        
       </div>
       <div className="flex flex-col">
         {/* Thumbnail */}
