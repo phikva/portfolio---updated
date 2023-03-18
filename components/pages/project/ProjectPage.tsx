@@ -36,7 +36,7 @@ export function ProjectPage({
   } = project || {}
 
   const startYear = new Date(duration?.start).getFullYear()
-  const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
+  const endYear = duration?.end ? new Date(duration?.end).getFullYear()  : 'Now'
 
   return (
     <>
@@ -105,7 +105,7 @@ export function ProjectPage({
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9] rounded-md border mb-2"
+          classesWrapper="relative aspect-[16/9] rounded-md border mb-2 md:mb-0"
         />
       )}
         {project.backgroundVideo.url && (

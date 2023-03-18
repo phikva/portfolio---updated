@@ -13,7 +13,16 @@ export interface MilestoneItem {
     end?: string
   }
   image?: Image
+  backgroundVideo?: string,
   tags?: string[]
+  title?: string
+
+}
+
+export interface backgroundVideo {
+  description?: string
+ backgroundVideo?:string
+  url?: string
   title?: string
 }
 
@@ -60,6 +69,7 @@ export interface ProjectPayload {
   slug: string
   tags?: string[]
   title?: string
+  
 }
 
 export interface SettingsPayload {

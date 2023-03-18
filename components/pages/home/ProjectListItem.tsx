@@ -25,17 +25,17 @@ export function ProjectListItem(props: ProjectProps) {
         <TextBox project={project} />
       </div>
       
-      <div className="pt-4  md:pt-6 w-full xl:w-5/6 md:grid md:grid-cols-2 md:gap-x-4 ">
+      <div className="relative pt-4  md:pt-6 w-full  md:grid md:grid-cols-2  md:gap-x-4 md:gap-y-4 ">
       {project.coverImage && (
         
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9] rounded-md border mb-4  md:col-start-1 md:row-start-1"
+          classesWrapper="projectImageHome relative aspect-[16/9] rounded-md border mb-4  md:col-start-1 md:row-start-1 md:row-span-2 "
         />
         
       )}
-       <div className='relative mb-4 md:col-start-1 md:mb-0 md:row-start-1 xl:max-w-[500px] projectHomeText '>
+       <div className='relative mb-4 md:col-start-1 md:mb-0 md:row-start-2 xl:max-w-[700px] projectHomeText '>
       <CustomPortableText value={project.overviewHomePage}
       />
       </div>
@@ -44,8 +44,10 @@ export function ProjectListItem(props: ProjectProps) {
             <ReactPlayer
             style={{
               gridColumnStart: '2',
+              
             }}
              width='100%'
+            
              height='100%'
              volume={null}
           loop={true}
@@ -70,7 +72,7 @@ function TextBox({ project }: { project: ShowcaseProject }) {
     <div className="relative flex w-full flex-col justify-between">
       <div className='flex  flex-col md:flex-row justify-between'>
         {/* Title */}
-        <div className="text-link   md:text-2xl leading-none">
+        <div className="text-link   md:text-2xl leading-none ">
           {project.title}
         </div>
         <div>

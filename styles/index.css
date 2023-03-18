@@ -39,14 +39,22 @@ ol {
 }
 
 video {
-  @apply rounded-md border;
+  @apply rounded-md border md:aspect-video md:object-cover;
+}
+.timelineImage {
+  @apply aspect-[16/9];
 }
 .projectHomeText p {
   
   top: 0;
   /* bottom: 0; */
-  @apply text-link md:absolute;
+  @apply text-link;
 }
+
+/* .projectImageHome {
+top: 43%;
+  @apply md:absolute md:w-6/12;
+} */
 
 h1{
   letter-spacing: -.015em;

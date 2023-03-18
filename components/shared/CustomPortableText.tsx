@@ -3,6 +3,11 @@ import ImageBox from 'components/shared/ImageBox'
 import { TimelineSection } from 'components/shared/TimelineSection'
 import ReactPlayer from 'react-player'
 import { Image, PortableTextBlock} from 'sanity'
+import { backgroundVideo } from 'types'
+
+import VideoBox from './videoBox'
+
+
 export function CustomPortableText({
   paragraphClasses,
   value,
@@ -51,15 +56,20 @@ export function CustomPortableText({
           </div>
         )
       },
+
+      
       video: ({
         value,
       }: {
-        value:  & {video?: object, alt?: string; caption?: string }
+        value: backgroundVideo & { alt?: string; caption?: string; url?: string }
       }) => {
         return (
           <div className="my-4 space-y-2">
-            <ReactPlayer src={value} />
-
+            <ReactPlayer
+              src={value.url}
+              alt={value.alt}
+              classesWrapper="relative aspect-[16/9] rounded-md border"
+            />
             {value?.caption && (
               <div className="text-sm text-gray-600">
                 {value.caption}
@@ -68,6 +78,9 @@ export function CustomPortableText({
           </div>
         )
       },
+
+   
+      
       
       timeline: ({ value }) => {
         const { items } = value || {}

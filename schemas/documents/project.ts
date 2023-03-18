@@ -226,6 +226,53 @@ export default defineType({
             }),
           ],
         }),
+        
+        defineField({
+          name: 'backgroundVideo',
+        title: 'Background Video',
+        type: 'document',
+        description: 'copy the url from assets manager',
+      
+        fields: [
+          
+          {
+            name: 'url',
+            title: 'Url',
+            type: 'url',
+            description:
+              'Please make sure this is a short loopable video, does not have sound, and is a video file. Please do not use a link from youtube, vemeo, or any other video hosting wesbite link.',
+          },
+          defineField({
+            title: 'Caption',
+            name: 'caption',
+            type: 'string',
+          }),
+          defineField({
+            name: 'alt',
+            type: 'string',
+            title: 'Alt text',
+            description:
+              'Alternative text for screenreaders. Falls back on caption if not set',
+          }),
+        ],
+       
+          
+        
+        preview: {
+          select: {
+            title: 'title',
+            subtitle: 'url',
+          },
+          prepare({ title, subtitle }) {
+            return {
+              title,
+              subtitle,
+            };
+          },
+        },
+        }),
+       
+
       ],
     }),
   ],
