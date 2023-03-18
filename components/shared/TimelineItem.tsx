@@ -26,11 +26,11 @@ export function TimelineItem({
         {/* Title */}
         <h4 className="">{title}</h4>
         {/* Tags */}
-        <div className="text-sm pb-4">
+        <div className="text-sm pb-4 flex flex-wrap">
           {tags?.map((tag, key) => (
-            <span key={key}>
+            <span key={key} className='mr-1 mt-2 '>
               
-              <span className="mr-1 mt-1 break-words px-2 py-1 rounded-full border ">#{tag}</span>
+              <span className="break-words px-2 py-1 rounded-full border ">#{tag}</span>
             </span>
           ))}
           {/* {startYear} - {endYear} */}
