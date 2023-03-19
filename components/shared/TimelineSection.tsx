@@ -62,7 +62,7 @@ export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
 
             {milestones?.map((experience, index) => (
              
-              <div className='pb-6 pt-4 md:pb-20 ' key={index}>
+              <div className=' pt-4 md:pb-20 ' key={index}>
                 <TimelineItem
                   milestone={experience}
                   isLast={milestones.length - 1 === index}
