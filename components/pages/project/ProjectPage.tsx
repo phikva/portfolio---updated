@@ -105,7 +105,7 @@ export function ProjectPage({
         <ImageBox
           image={project.coverImage}
           alt={`Cover image from ${project.title}`}
-          classesWrapper="relative aspect-[16/9] rounded-md border mb-2 md:mb-0"
+          classesWrapper="relative aspect-[16/9] rounded-md border mb-2 md:mb-0 xl:mb-0"
         />
       )}
         {project.backgroundVideo.url && (
