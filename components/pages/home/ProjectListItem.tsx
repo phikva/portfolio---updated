@@ -36,7 +36,7 @@ export function ProjectListItem(props: ProjectProps) {
         
       )}
       
-       <div className='relative mb-4 md:col-start-1 md:mb-0 md:row-start-2 xl:max-w-[700px] projectHomeText '>
+       <div className='relative mb-4 md:col-start-1 md:mb-0 md:row-start-2 xl:max-w-[700px] projectHomeText'>
       <CustomPortableText value={project.overviewHomePage}
       />
       </div>
