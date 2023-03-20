@@ -46,7 +46,7 @@ export function ProjectPage({
         <div>
           <div className="mb-20 space-y-2 xl:space-y-4">
           <div className="">
-          <h1 className='text-left font-neueHeavy text-4xl md:text-8xl xl:text-15xl'> {title}</h1>
+          <h1 className='mb-5 xl:mb-6 text-left font-neueHeavy text-4xl md:text-8xl xl:text-15xl'> {title}</h1>
         </div>
           
             {/* Header */}

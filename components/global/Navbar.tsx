@@ -8,7 +8,7 @@ interface NavbarProps {
 
 export function Navbar({ menuItems }: NavbarProps) {
   return (
-    <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 py-4">
+    <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 py-0">
       {menuItems &&
         menuItems.map((menuItem, key) => {
           const href = resolveHref(menuItem?._type, menuItem?.slug)
