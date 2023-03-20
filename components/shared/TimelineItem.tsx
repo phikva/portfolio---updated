@@ -27,7 +27,7 @@ export function TimelineItem({
         
         {/* Tags */}
         {tags?.map && (
-          <div className="text-sm flex flex-wrap pb-4">
+          <div className="text-sm flex flex-wrap pb-4 md:pb-4">
             {tags?.map((tag, key) => (
               <span key={key} className="mr-1 mt-2 ">
                 <span className="break-words rounded-full border px-2 py-1 ">
