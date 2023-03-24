@@ -22,7 +22,7 @@ export function ProjectPage({
   homePageTitle,
   preview,
 }: ProjectPageProps) {
-  // Default to an empty object to allow previews on non-existent documents
+  // Default to an empty object to allow previews on non-existent documents.
   const {
     client,
     coverImage,
