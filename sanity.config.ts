@@ -19,6 +19,7 @@ import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -52,6 +53,7 @@ export default defineConfig({
   },
   plugins: [
     // muxInput({mp4_support: 'standard'}),
+    vercelDeployTool(),
     media(),
     deskTool({
       structure: pageStructure([home, settings]),

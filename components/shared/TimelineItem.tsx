@@ -18,13 +18,10 @@ export function TimelineItem({
 
   return (
     <div className="">
-      
       <div className="">
         {/* Title */}
-      {title && (
-        <h4 className="pt-4 border-t">{title}</h4>
-      )}
-        
+        {title && <h4 className="border-t pt-4">{title}</h4>}
+
         {/* Tags */}
         {tags?.map && (
           <div className="text-sm flex flex-wrap pb-4 md:pb-4">
@@ -41,9 +38,10 @@ export function TimelineItem({
 
         {/* Description */}
         {description && (
-          <div className=" text-xl text-grey md:text-link max-w-[600px] pb-4">{description}</div>
+          <div className=" max-w-[600px] pb-4 text-xl text-grey md:text-link">
+            {description}
+          </div>
         )}
-        
       </div>
       <div className="flex flex-col">
         {/* Thumbnail */}
@@ -61,7 +59,7 @@ export function TimelineItem({
         )}
         {image?.asset && (
           <div
-            className="bg-black relative overflow-hidden rounded-md border mt-2"
+            className="bg-black relative mt-2 overflow-hidden rounded-md border"
             // style={{ width: '100px', height: '100px' }}
           >
             <ImageBox
@@ -70,7 +68,7 @@ export function TimelineItem({
               // size="10vw"
               // width={50}
               // height={50}
-              classesWrapper='timelineImage '
+              classesWrapper="timelineImage "
             />
           </div>
         )}

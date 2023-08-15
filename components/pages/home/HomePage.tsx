@@ -17,7 +17,12 @@ export interface HomePageProps {
 }
 
 export function HomePage({ page, settings, preview }: HomePageProps) {
-  const { body, overview, showcaseProjects, title = 'Personal website' } = page ?? {}
+  const {
+    body,
+    overview,
+    showcaseProjects,
+    title = 'Personal website',
+  } = page ?? {}
 
   return (
     <>
@@ -28,9 +33,8 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
           {/* Header */}
           {title && <Header centered title={title} description={overview} />}
           {/* Showcase projects */}
-          <h3 className=''>Latest work</h3>
+          <h3 className="">Latest work</h3>
           {showcaseProjects && showcaseProjects.length > 0 && (
-            
             <div className="">
               {/* <div className=''>
             
@@ -48,25 +52,23 @@ export function HomePage({ page, settings, preview }: HomePageProps) {
               })}
             </div>
           )}
-            <div className='mt-10'>
-              {/* <h3 className='pb-4 md:col-start-1'>Education</h3> */}
-              <div className=''>
+          <div className="mt-10">
+            {/* <h3 className='pb-4 md:col-start-1'>Education</h3> */}
+            <div className="">
               {/* Body */}
-         {body && (
-              <CustomPortableText
-                paragraphClasses="font-serif max-w-3xl text-gray-600 text-xl"
-                value={body}
-              />
-            )}
+              {body && (
+                <CustomPortableText
+                  paragraphClasses="font-serif max-w-3xl text-gray-600 text-xl"
+                  value={body}
+                />
+              )}
               {/* <p>UI Design at Noroff, Oslo, 2021-2022.</p>
               <p>Front-End Development at Noroff, Oslo, 2019-2021.</p>
               <p>Personal trainer at Active education, Oslo, 2014.</p>
               <p>Medicine year study at Høyskolen Kristiania, Oslo, 2014-2015.</p> */}
-              </div>
-              
             </div>
-            
-         
+          </div>
+
           {/* Workaround: scroll to top on route change */}
           <ScrollUp />
         </div>

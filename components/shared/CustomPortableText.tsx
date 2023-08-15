@@ -2,11 +2,8 @@ import { PortableText, PortableTextComponents } from '@portabletext/react'
 import ImageBox from 'components/shared/ImageBox'
 import { TimelineSection } from 'components/shared/TimelineSection'
 import ReactPlayer from 'react-player'
-import { Image, PortableTextBlock} from 'sanity'
+import { Image, PortableTextBlock } from 'sanity'
 import { backgroundVideo } from 'types'
-
-import VideoBox from './videoBox'
-
 
 export function CustomPortableText({
   paragraphClasses,
@@ -25,7 +22,7 @@ export function CustomPortableText({
       link: ({ children, value }) => {
         return (
           <a
-            className=" text-xl md:text-link transition hover:opacity-50 rounded-full border border-black px-5 py-2"
+            className=" border-black rounded-full border px-5 py-2 text-xl transition hover:opacity-50 md:text-link"
             href={value?.href}
             target="_blank"
             rel="noreferrer noopener"
@@ -49,19 +46,20 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9] rounded-md border"
             />
             {value?.caption && (
-              <div className=" md:text-link text-gray-600">
-                {value.caption}
-              </div>
+              <div className=" text-gray-600 md:text-link">{value.caption}</div>
             )}
           </div>
         )
       },
 
-      
       video: ({
         value,
       }: {
-        value: backgroundVideo & { alt?: string; caption?: string; url?: string }
+        value: backgroundVideo & {
+          alt?: string
+          caption?: string
+          url?: string
+        }
       }) => {
         return (
           <div className="my-4 space-y-2">
@@ -71,23 +69,17 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9] rounded-md border"
             />
             {value?.caption && (
-              <div className="text-sm text-gray-600">
-                {value.caption}
-              </div>
+              <div className="text-sm text-gray-600">{value.caption}</div>
             )}
           </div>
         )
       },
 
-   
-      
-      
       timeline: ({ value }) => {
         const { items } = value || {}
         return <TimelineSection timelines={items} />
       },
     },
-    
   }
 
   return <PortableText components={components} value={value} />

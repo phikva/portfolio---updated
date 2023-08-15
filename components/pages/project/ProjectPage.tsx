@@ -3,10 +3,11 @@ import { Header } from 'components/shared/Header'
 import ImageBox from 'components/shared/ImageBox'
 import ScrollUp from 'components/shared/ScrollUp'
 import Link from 'next/link'
+import ReactPlayer from 'react-player'
 import type { ProjectPayload, SettingsPayload } from 'types'
+
 import Layout from '../../shared/Layout'
 import ProjectPageHead from './ProjectPageHead'
-import ReactPlayer from 'react-player'
 
 export interface ProjectPageProps {
   project: ProjectPayload | undefined

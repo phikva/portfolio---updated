@@ -1,7 +1,6 @@
 import { Footer } from 'components/global/Footer'
 import { Navbar } from 'components/global/Navbar'
 import { PreviewBanner } from 'components/preview/PreviewBanner'
-
 import { SettingsPayload } from 'types'
 
 const fallbackSettings: SettingsPayload = {
@@ -21,12 +20,11 @@ export default function Layout({
   preview,
 }: LayoutProps) {
   return (
-    <div className=" p-2 md:p-4 xl:p-5 bg-white flex min-h-screen flex-col max-w-[2000px] xl:mx-auto text-black">
+    <div className=" text-black flex min-h-screen max-w-[2000px] flex-col bg-white p-2 md:p-4 xl:mx-auto xl:p-5">
       {preview && <PreviewBanner />}
       <Navbar menuItems={settings?.menuItems} />
       <div className="mt-10 flex-grow">{children}</div>
       <Footer footer={settings?.footer} />
-    
     </div>
   )
 }

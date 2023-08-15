@@ -1,8 +1,6 @@
 // import { urlForImage } from 'lib/sanity.image'
 
-import Image from 'next/image'
 import ReactPlayer from 'react-player'
-import type { backgroundVideo } from 'types'
 
 interface VideoBoxProps {
   video?: { asset?: any }
@@ -12,7 +10,7 @@ interface VideoBoxProps {
   height?: number
   size?: string
   classesWrapper?: string
- src?:string
+  src?: string
 }
 
 export default function VideoBox({
@@ -23,24 +21,18 @@ export default function VideoBox({
   size = '100vw',
   classesWrapper,
 }: VideoBoxProps) {
-  
-
   return (
-    <div
-      className={`w-full overflow-hidden  bg-gray-50 ${classesWrapper}`}
-    >
+    <div className={`bg-gray-50 w-full  overflow-hidden ${classesWrapper}`}>
       {video && (
- <ReactPlayer
- className="absolute h-full w-full"
- alt={alt}
- width={width}
- height={height}
- sizes={size}
- src={video}
-/>
+        <ReactPlayer
+          className="absolute h-full w-full"
+          alt={alt}
+          width={width}
+          height={height}
+          sizes={size}
+          src={video}
+        />
       )}
-       
-     
     </div>
   )
 }
